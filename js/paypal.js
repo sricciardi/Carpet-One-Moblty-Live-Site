@@ -24,14 +24,14 @@ setTimeout( function dustin(){
 
 	// payment() is called when the button is clicked
 	payment: function(data, actions) {       
-	   var totalPrice4 = document.getElementById('totalPrice').innerHTML;
+	   var combinedTotalPrice = document.getElementById('combinedTotalPrice').innerHTML;
 
 		// Make a call to the REST api to create the payment
 		return actions.payment.create({
 			payment: {
 				transactions: [
 					{
-						amount: { total: totalPrice4, currency: 'USD' }
+						amount: { total: combinedTotalPrice, currency: 'USD' }
 						//amount: { total: 1.00, currency: 'USD' }
 					}
 				]

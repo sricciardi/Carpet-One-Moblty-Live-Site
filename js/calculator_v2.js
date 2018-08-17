@@ -1,5 +1,6 @@
 //This function finds the amount of all screens
-function getScreensAmount(){	
+function getScreensAmount(){
+	"use strict";
 	var samsung18Amount = document.getElementById('samsung18').value * 1;
 	var samsung18kioskAmount = document.getElementById('samsung18kiosk').value * 1;
 	var indoor49Amount = document.getElementById('indoor49').value * 1;
@@ -11,7 +12,8 @@ function getScreensAmount(){
 }
 
 //This function finds price for all screen amounts
-function getScreensPrice(){	
+function getScreensPrice(){
+	"use strict";
 	var samsung18Price = document.getElementById('samsung18').value * 605;
 	var samsung18kioskPrice = document.getElementById('samsung18kiosk').value * 1093;
 	var indoor49Price = document.getElementById('indoor49').value * 1102;
@@ -22,7 +24,14 @@ function getScreensPrice(){
 	return [samsung18Price, samsung18kioskPrice, indoor49Price, indoor55Price, outdoor55Price, retrofitPrice];
 }
 
+function calculateSubscriptionAmount(){
+	"use strict";
+	var totalSubscriptions = getScreensAmount() * 720;
+	return [totalSubscriptions];
+}
+
 function calculateTotal(){
+	"use strict";
 	//Display the amount of screens
 	var allScreens = getScreensAmount();
 	document.getElementById('samsung18Amount').innerHTML = allScreens[0].toLocaleString();
@@ -46,12 +55,18 @@ function calculateTotal(){
 	document.getElementById('indoor55Total').value = allScreensPrice[3].toLocaleString();
 	document.getElementById('outdoor55Total').value = allScreensPrice[4].toLocaleString();
 	document.getElementById('retrofitTotal').value = allScreensPrice[5].toLocaleString();
+	
+	var numberOfScreens = allScreens[0] + allScreens[1] + allScreens[2] + allScreens[3]  + allScreens[4] + allScreens[5];
 	var allScreensTotal = allScreensPrice[0] + allScreensPrice[1] + allScreensPrice[2] + allScreensPrice[3] + allScreensPrice[4] + allScreensPrice[5];
 	document.getElementById('screenTotal').value = allScreensTotal.toLocaleString();
 
 	//Add up the totals and display the final total
-    var totalPrice1 = allScreensTotal;
-	var totalPrice2 = totalPrice1.toLocaleString();
-	document.getElementById('totalPrice').innerHTML = totalPrice2;
-	document.getElementById('hardwareTotal').value = totalPrice2;
+	var subscriptionTP = numberOfScreens * 720;
+	var combinedTP = allScreensTotal + subscriptionTP;
+	document.getElementById('totalPrice').innerHTML = allScreensTotal.toLocaleString();
+	document.getElementById('hardwareTotal').value = allScreensTotal.toLocaleString();
+	document.getElementById('subscriptionTotalPrice').innerHTML = subscriptionTP.toLocaleString();
+	document.getElementById('combinedTotalPrice').innerHTML = combinedTP.toLocaleString();
+	console.log(document.getElementById('totalPrice').innerHTML);
+	console.log(document.getElementById('hardwareTotal').value);
 }

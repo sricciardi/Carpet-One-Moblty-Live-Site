@@ -745,6 +745,22 @@ noscript p a:hover {
 .review tfoot tr.hardwareTotal td {
 	font-size: 20px;
 }
+.review tfoot tr.subscriptionTotal {
+	background-color: #0096a4; 
+	background-color: rgba(0,150,164,0.75);
+    color: #fff;
+}
+.review tfoot tr.subscriptionTotal td {
+	font-size: 20px;
+}
+.review tfoot tr.combinedTotal {
+	background-color: #0096a4; 
+	background-color: rgba(0,235,26,0.75);
+    color: #fff;
+}
+.review tfoot tr.combinedTotal td {
+	font-size: 20px;
+}
 .license {
 	display: inline-block;
 	position: relative;
