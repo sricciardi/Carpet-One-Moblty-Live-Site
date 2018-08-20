@@ -57,7 +57,10 @@
 				<li data-menuanchor="1stPage"><a href="#1stPage" title="Welcome"><i class="fa fa-play" aria-hidden="true" style="padding-left:4px; padding-bottom:1px;"></i></a></li>
 				<li data-menuanchor="2ndPage"><a href="#2ndPage" title="Contact Details"><i class="fa fa-user" aria-hidden="true" style="padding-bottom:3px;"></i></a></li>
 				<li data-menuanchor="3rdPage"><a href="#3rdPage" title="Screen Options"><i class="fa fa-television" aria-hidden="true" style="padding-left:2px;"></i></a></li>
+				<!-- Screen Locations is no longer necessary -->
+				<!--
 				<li data-menuanchor="4thPage"><a href="#4thPage" title="Screen Locations"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:2px;"></i></a></li>
+				-->
 				<li class="menu-break"></li>
 				<li data-menuanchor="5thPage"><a href="#5thPage" title="Installation Date"><i class="fa fa-calendar" aria-hidden="true" style="padding-bottom:1px;"></i></a></li>
 				<li data-menuanchor="6thPage"><a href="#6thPage" title="Order Summary"><i class="fa fa-list-ul" aria-hidden="true"></i></a></li>
@@ -325,9 +328,14 @@
 					<hr>
 					<div class="row">
 						<div class="col-sm-12 subscriptiontotal">
-							<label>
-								<span class="item-title-sub" id="subscriptioninfo">Annual Subscription Amount</span>
-							</label>
+							<div>
+								<span class="item-title-sub" id="subscriptioninfo">*Annual Subscription Amount:<p class="total-wrapper">$<span id="subscriptionTotalPrice">0</span><sup>.00</sup></p></span>
+							</div>
+							<tr>
+								<td colspan="4">
+									<p class="disc" style="font-size:16px; margin:0 auto;" id="subscriptionSubText">*See the order summary below for information regarding the subscription amount.</p>
+								</td>
+							</tr>
 					  </div>
 				  </div>
 				</fieldset>
@@ -336,6 +344,9 @@
 				<a href="#" class="nav-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
 			</div>
 		</div>
+		<!-- Removed on 08.20.2018 because the Screen Location section is
+			no longer necessary. -->
+		<!--
 		<div class="section" id="screens2">
 			<div class="screens2">
 				<div class="callout"></div>
@@ -487,6 +498,7 @@
 				<a href="#" class="nav-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
 			</div>
 		</div>
+		-->
 		<div class="section" id="installdate">
 			<div class="installdate">
 				<div class="callout"></div>
@@ -568,7 +580,7 @@
 								</td>
 							</tr>
 							<tr class="subscriptionTotal">
-								<td colspan="4">*Subscription Total: <p class="total-wrapper">$<span id="subscriptionTotalPrice">0</span></p>
+								<td colspan="4">*Subscription Total: <p class="total-wrapper">$<span id="subscriptionTotalPriceSummary">0</span></p>
 								</td>
 							</tr>
 							<tr class="combinedTotal">
@@ -577,7 +589,7 @@
 							</tr>
 							<tr>
 								<td colspan="4">
-									<p class="disc" style="font-size:16px; margin:0 auto;">*$60 monthly subscription fee to be applied per screen, which will be billed annually in the amount of $720 per screen. Transaction to appear on your credit card statement as from Sandy Alexander, our partner company responsible for processing each payment.</p>
+									<p class="disc" style="font-size:16px; margin:0 auto;">*$60 monthly subscription fee to be applied per screen ($720 total per screen) Subscription will be billed annually. Transaction to appear on your credit card statement as from Sandy Alexander, our partner company responsible for processing each payment.</p>
 								</td>
 							</tr>
 						</tfoot>
@@ -618,6 +630,8 @@
 							<input type="hidden" name="retrofitTotal" id="retrofitTotal">
 							<input type="hidden" name="screenTotal" id="screenTotal">
 							<input type="hidden" name="hardwareTotal" id="hardwareTotal">
+							<input type="hidden" name="subscriptionTotal" id="subscriptionTotal">
+							<input type="hidden" name="combinedTotal" id="combinedTotal">
                             <input type="hidden" name="submissiondate" id="submissiondate">
 							<!--SUBMIT BUTTON-->
 							<input type="button" class="btn submit" id="validationFunction" value="Submit">

@@ -622,6 +622,9 @@ noscript p a:hover {
 .screens hr {
 	margin: 15px auto;
 }
+.subscriptionSubText{
+	align-content: center;
+}
 
 /* SCREEN LOCATIONS
 -------------------------------------------------*/
@@ -755,8 +758,8 @@ noscript p a:hover {
 }
 .review tfoot tr.combinedTotal {
 	background-color: #0096a4; 
-	background-color: rgba(0,235,26,0.75);
-    color: #fff;
+	background-color: rgba(0,205,224,0.75);
+    color: #000000;
 }
 .review tfoot tr.combinedTotal td {
 	font-size: 20px;

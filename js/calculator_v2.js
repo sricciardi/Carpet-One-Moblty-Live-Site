@@ -62,10 +62,12 @@ function calculateTotal(){
 
 	//Add up the totals and display the final total
 	var subscriptionTP = numberOfScreens * 720;
+	var subscriptionTPSummary = numberOfScreens * 720;
 	var combinedTP = allScreensTotal + subscriptionTP;
 	document.getElementById('totalPrice').innerHTML = allScreensTotal.toLocaleString();
 	document.getElementById('hardwareTotal').value = allScreensTotal.toLocaleString();
 	document.getElementById('subscriptionTotalPrice').innerHTML = subscriptionTP.toLocaleString();
+	document.getElementById('subscriptionTotalPriceSummary').innerHTML = subscriptionTPSummary.toLocaleString();
 	document.getElementById('combinedTotalPrice').innerHTML = combinedTP.toLocaleString();
 	console.log(document.getElementById('totalPrice').innerHTML);
 	console.log(document.getElementById('hardwareTotal').value);
